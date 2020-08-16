@@ -1,0 +1,18 @@
+.links{
+    display: flex;
+    flex-direction: row;
+    
+    font-size: 15px;
+ align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.links a {
+    text-decoration: none;
+    color:#3E4300;
+    padding: 20px;
+}
+.links a:hover{
+    color:rgb(0, 0, 0);
+}

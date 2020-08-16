@@ -1,0 +1,150 @@
+.notification-container {
+	font-size: 14px;
+	box-sizing: border-box;
+	position: fixed;
+ 
+}
+
+.top-right {
+	top: 12px;
+	right: 12px;
+	transition: transform .6s ease-in-out;
+	animation: toast-in-right .7s;
+}
+
+.bottom-right {
+	bottom: 12px;
+	right: 12px;
+	transition: transform .6s ease-in-out;
+	animation: toast-in-right .7s;
+}
+
+.top-left {
+	top: 12px;
+	left: 12px;
+	transition: transform .6s ease-in;
+	animation: toast-in-left .7s;
+}
+
+.bottom-left {
+	bottom: 12px;
+	left: 12px;
+	transition: transform .6s ease-in;
+	animation: toast-in-left .7s;
+}
+
+.notification {
+	
+	transition: .3s ease;
+	position: relative;
+	pointer-events: auto;
+	overflow: hidden;
+    background-color: rgb(26, 155, 172);
+	padding: 30px;
+    height: 250px;
+	width: 300px;
+	border-radius: 3px 3px 3px 3px;
+	box-shadow: 0 0 10px #999;
+	color: #000;
+	opacity: .7;
+	background-position: 15px;
+    background-repeat: no-repeat;
+  
+}
+
+.notification:hover {
+	box-shadow: 0 0 12px #fff;
+	opacity: 1;
+	cursor: pointer
+}
+
+.notification-title {
+	font-weight: 700;
+	font-size: 20px;
+	text-align: left;
+	margin-top: 0;
+	margin-bottom: 6px;
+    width: 300px;
+    height: 18px;
+    
+}
+
+.notification-message {
+	margin: 0;
+    height: 18px;
+    margin-left: -1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 300px;
+}
+
+.notification-image {
+    float: left;
+    margin-right: 15px;
+}
+
+
+
+.toast {
+    height: 100px;
+    width: 365px;
+	color: #fff;
+	padding: 20px 15px 10px 10px;
+}
+
+.notification-container button {
+position: absolute;
+top: 0;
+left: 0;
+background-color: rgba(153, 153, 153, 0) ;
+border: rgba(0, 0, 0, 0);
+}
+
+@keyframes toast-in-right {
+	from {
+	  transform: translateX(100%);
+	  
+	}
+	to {
+	  transform: translateX(0);
+	}
+}
+
+@keyframes toast-in-left {
+	from {
+		transform: translateX(-100%);
+		
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+.notification-container {
+    -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+    -moz-animation: cssAnimation 0s ease-in 5s forwards;
+    -o-animation: cssAnimation 0s ease-in 5s forwards;
+    animation: cssAnimation 0s ease-in 5s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+    from {
+        visibility:hidden;
+    }
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    from {
+        visibility:hidden;
+    }
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
+}

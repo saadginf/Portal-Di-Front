@@ -1,0 +1,16 @@
+.agenda-item{
+    border: 1px solid black;
+    padding: 15px;
+    box-shadow:10px 10px grey;  
+    margin-bottom: 25px;
+}
+.decriptif-dates{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title-topten{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

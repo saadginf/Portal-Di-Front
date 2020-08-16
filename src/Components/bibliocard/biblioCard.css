@@ -1,0 +1,17 @@
+.search-card-biblio{
+    background-image: url("../../assets/biblio-bg.jpg");
+    text-align: center;
+    padding: 35px;
+}
+.input{
+    display: block;
+    width: 200px;
+    border-radius: 25px;
+    padding: 10px;
+    
+    margin: 15px auto;
+}
+.menu-title{
+
+
+}

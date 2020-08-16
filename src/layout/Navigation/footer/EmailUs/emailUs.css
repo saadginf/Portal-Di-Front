@@ -1,0 +1,36 @@
+.email-us{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+@media only screen and (max-width: 990px) {
+    .email-us{
+    
+    flex-direction: column;
+   
+    }
+}
+.email-link{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    border: 1px solid #3E4300;
+    background-color:#3E4300 ;
+    margin: 20px;
+}
+
+.email-link:hover{
+    text-decoration: none;
+    border: 1px solid #3E4300;
+    color: #3E4300;
+    background-color:rgba(63, 67, 0, 0.452) ;
+}
+.foot-logo{
+height: 80px;
+width: 50px;
+
+}

@@ -1,0 +1,19 @@
+.add-title{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.data-table-container{
+    margin-top: 40px;
+}
+.title-unite-biblio{
+
+    text-align: center;
+    border: 1px solid rgb(15, 94, 22);
+    margin-bottom: 40px;
+}
+.header-class{
+
+    background-color: rgba(90, 185, 122, 0.644);
+    font-size: 17px;
+}

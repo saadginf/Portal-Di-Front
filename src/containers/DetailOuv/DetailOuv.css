@@ -1,0 +1,16 @@
+.container-detailItem{
+ 
+    padding: 50px;
+
+ 
+}
+.classification-item{
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-weight: bolder;
+    font-size: 30px;
+}
+.details-item h3{
+    color: purple;
+}
