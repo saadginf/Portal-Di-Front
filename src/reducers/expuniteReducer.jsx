@@ -4,7 +4,8 @@ const initialState={
     loading:false,
     error:{},
     exp:{},
-    th:{}
+    th:{},
+    lecteurs:{}
 }
 
 export default (state = initialState, action)=>{
@@ -46,6 +47,20 @@ export default (state = initialState, action)=>{
             }
         
         
+            case actions.FETCH_LECTEURS_START:
+                return {...state, loading:true}
+            case actions.FETCH_LECTEURS_END:
+            return {...state, loading:false}
+               
+            case actions.FETCH_LECTEURS_FAIL:
+            return {...state, error:action.payload}
+            case actions.FETCH_LECTEURS_SUCCESS:
+                return {...state, 
+                    lecteurs:action.payload,
+                    error:false
+                }
+
+
                 default:
               return state;
       }      

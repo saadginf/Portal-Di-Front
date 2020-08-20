@@ -2,13 +2,15 @@ import React, {useState, useEffect} from 'react'
 import Axios from "axios"
 import BiblioCard from "../../Components/bibliocard/Bibliocard"
 import {connect} from 'react-redux';
-import {getEpUnit, getThByUnit} from '../../actions/expunitactions'
+import {getEpUnit, getThByUnit,getLecByUnit} from '../../actions/expunitactions'
 import {Tabs,Tab} from "react-bootstrap"
 import Form from "../../Components/Formulaire/Formu"
 import './Biblioinsp.css'
 import OuvFom from '../../Components/Formulaire/FormuOu'
 import FormuTom from '../../Components/Formulaire/FormuTom';
 import Datable from "../../Components/Datatable/DataTableUnite"
+import DatableLec from "../../Components/Datatable/DataTableLecteurs"
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload } from '@fortawesome/free-solid-svg-icons'
 const BiblioInsp = (props) => {
@@ -16,7 +18,7 @@ const BiblioInsp = (props) => {
     const { match: { params } } = props;
      
       useEffect(() => {
-       
+        props.getLecByUnit(params.unit)
         props.getExpUnite(params.unit)
         props.getThByUnit(params.unit)
       }, [props.getExpUnite])  
@@ -54,6 +56,12 @@ const BiblioInsp = (props) => {
        <h1 className="add-title title-unite-biblio ">Ajouter un nouvel Exemplaire</h1>
        <div className="col-md-6  offset-md-3">
        <Form/>
+       </div>
+      </Tab>
+      <Tab eventKey="lecteurs" title="Lecteurs">
+       <h1 className="add-title title-unite-biblio ">Liste des Lecteurs</h1>
+       <div className="col-md-8  offset-md-2">
+       <DatableLec data={props.lec} />
        </div>
       </Tab>
       <Tab eventKey="inventaire" title="Catalague Inventaire">
@@ -94,12 +102,14 @@ const mapStateToProps = ({expunite}) => ({
   loading:expunite.loading,
   error:expunite.error,
   exps:expunite.exp,
-  th:expunite.th
+  th:expunite.th,
+  lec:expunite.lecteurs
 });
 
 const mapDispatchToProps = {
 getExpUnite: getEpUnit,
-getThByUnit:getThByUnit
+getThByUnit:getThByUnit,
+getLecByUnit:getLecByUnit
 };
 
 

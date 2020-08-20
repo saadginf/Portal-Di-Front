@@ -95,3 +95,33 @@ export const getThByUnit = (unite)=> dispatch  =>{
         )
     
 }
+export const getLecByUnit = (unite)=> dispatch  =>{
+   
+    dispatch({
+        type: action.FETCH_LECTEURS_START
+    })
+    Axios.get('http://localhost:8080/api/biblio/emprunteur/unite/'+unite)
+    .then(res=>{
+       console.log(res.data) 
+    
+       dispatch({
+        type: action.FETCH_LECTEURS_SUCCESS,
+        payload: res.data
+    })
+    })
+    .catch(err=>{
+        console.log(err)
+        dispatch({
+            type: action.FETCH_THUN_FAIL,
+            payload: err.response.data
+        })
+    }).finally(()=>{
+        dispatch({
+            type: action.ADD_EVENTS_END,
+            
+        })
+     
+    }
+        )
+    
+}
