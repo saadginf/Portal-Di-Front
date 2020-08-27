@@ -1,26 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Modal,Button}  from 'react-bootstrap'
 import { useForm } from "react-hook-form";
+import scc from '../../assets/success.png'
 import Axios from "axios";
 const UpFile = (props) => {
   const { handleSubmit, register, errors } = useForm();
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState('')
   const onSubmit = values =>{
     let formData = new FormData();
 
     formData.append("file", values.fichier[0]);
-    formData.append("objet", values.objet);
-    formData.append("mumero", values.mumero);
-    Axios.post('http://localhost:8080/api/archive/doc', formData,{
+    Axios.post('http://localhost:8080/api/biblio/ouvrages/uploadFile/'+props.ouv, formData,{
                   
                     headers:{
                       "Content-Type": "multipart/form-data",
                     }
                   })
                   .then(res=>{
-                   alert("Ajouter avec succès")
+                    setSuccess(true)
+                    setError('')
                   })
                   .catch(err=>{
-                      console.log(err)
+                     setError('Fichier Invalide')
                      
                   })
    
@@ -35,13 +37,13 @@ const UpFile = (props) => {
       centered
       show={props.show} onHide={props.handleClose}
     >
-      <Modal.Header closeButton>
+      <Modal.Header>
         <Modal.Title id="contained-modal-title-vcenter">
          {props.title}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      { !success && <form onSubmit={handleSubmit(onSubmit)}>
 
       <div className="forme-group form-fields">
         <label htmlFor="fichier">Fichier:</label>
@@ -58,32 +60,27 @@ const UpFile = (props) => {
         <div className="text-danger ">
         {errors.fichier && errors.fichier.message}
         </div>
-        <input
-        className="form-control"
-        name="objet"
-        placeholder="objet"
-        type="text"
-        ref={register({
-          required: "Champ Obligatoire",
-        })}
-      />
-       <input
-        className="form-control"
-        name="mumero"
-        placeholder="num"
-        type="text"
-        ref={register({
-          required: "Champ Obligatoire",
-        })}
-      />
+        <div className="text-danger ">
+        {error  && error}
+        </div>
       </div>
         <div className="button-form">
         <button type="submit" className="btn btn-success add-btn" >Enregistrer</button>
         </div>
     </form>
+}
+{success && <div className="success-vector">
+              <img src={scc} alt=""/>
+            </div>
+
+            }
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.handleClose}>Close</Button>
+        <Button onClick={()=>{
+              props.handleClose()
+              setSuccess(false)
+              setError('')
+            }}>Close</Button>
       </Modal.Footer>
     </Modal>
     )

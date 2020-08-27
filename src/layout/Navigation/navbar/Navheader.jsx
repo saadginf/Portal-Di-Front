@@ -33,10 +33,10 @@ const Navheader = props => {
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">
-      <Nav.Link href="biblio" id="links">Médiathèque</Nav.Link>
-      <Nav.Link href="calendrier"id="links">Agenda</Nav.Link>
-      <Nav.Link href="archive"id="links">Archives</Nav.Link>
-      <Nav.Link href="blog"id="links">Formations</Nav.Link>
+      <Nav.Link href="/biblio" id="links">Médiathèque</Nav.Link>
+      <Nav.Link href="/calendrier"id="links">Agenda</Nav.Link>
+      <Nav.Link href="/archive"id="links">Archives</Nav.Link>
+      <Nav.Link href="/blog"id="links">Formations</Nav.Link>
     </Nav>
    {links}
   </Navbar.Collapse>

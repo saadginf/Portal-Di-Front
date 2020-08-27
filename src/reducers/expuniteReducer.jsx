@@ -5,7 +5,8 @@ const initialState={
     error:{},
     exp:{},
     th:{},
-    lecteurs:{}
+    lecteurs:{},
+    emprunts:{}
 }
 
 export default (state = initialState, action)=>{
@@ -60,6 +61,19 @@ export default (state = initialState, action)=>{
                     error:false
                 }
 
+
+                case actions.FETCH_EPT_START:
+                    return {...state, loading:true}
+                case actions.FETCH_EPT_END:
+                return {...state, loading:false}
+                   
+                case actions.FETCH_EPT_FAIL:
+                return {...state, error:action.payload}
+                case actions.FETCH_EPT_SUCCESS:
+                    return {...state, 
+                        emprunts:action.payload,
+                        error:false
+                    }
 
                 default:
               return state;

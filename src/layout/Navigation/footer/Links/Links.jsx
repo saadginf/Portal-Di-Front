@@ -6,9 +6,9 @@ const Links = () => {
         <div className="links">
 
        
-               <a href="/">Bibliothèque</a>
-               <a href="courses">Calendrier</a>
-               <a href="blog">Archives</a>
+               <a href="/biblio">Médiathèque</a>
+               <a href="/calendrier">Agenda</a>
+               <a href="/archive">Archives</a>
                <a href="discuss">Formations</a>
          
         </div>

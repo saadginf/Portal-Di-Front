@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Axios from "axios"
 import BiblioCard from "../../Components/bibliocard/Bibliocard"
 import {connect} from 'react-redux';
-import {getEpUnit, getThByUnit,getLecByUnit} from '../../actions/expunitactions'
+import {getEpUnit, getThByUnit,getLecByUnit, getEptByUnit} from '../../actions/expunitactions'
 import {Tabs,Tab} from "react-bootstrap"
 import Form from "../../Components/Formulaire/Formu"
 import './Biblioinsp.css'
@@ -10,14 +10,15 @@ import OuvFom from '../../Components/Formulaire/FormuOu'
 import FormuTom from '../../Components/Formulaire/FormuTom';
 import Datable from "../../Components/Datatable/DataTableUnite"
 import DatableLec from "../../Components/Datatable/DataTableLecteurs"
-
+import Borrows from './Brrows'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload } from '@fortawesome/free-solid-svg-icons'
 const BiblioInsp = (props) => {
-    const [key, setKey] = useState('home');
+    const [key, setKey] = useState('emprunts');
     const { match: { params } } = props;
      
       useEffect(() => {
+        props.getEptByUnit(params.unit)
         props.getLecByUnit(params.unit)
         props.getExpUnite(params.unit)
         props.getThByUnit(params.unit)
@@ -36,7 +37,7 @@ const BiblioInsp = (props) => {
       <Tab eventKey="home" title="Liste">
       <div className="data-table-container">
       <h1 className ="title-unite-biblio">Liste des ouvrages de l'unité</h1>
-      <Datable data={props.exps} />
+      <Datable data={props.exps} lecteurs={props.lec? props.lec : []} />
       </div>
       </Tab>
       <Tab eventKey="ouvrage" title="Ajouter un Ouvrage">
@@ -62,6 +63,12 @@ const BiblioInsp = (props) => {
        <h1 className="add-title title-unite-biblio ">Liste des Lecteurs</h1>
        <div className="col-md-8  offset-md-2">
        <DatableLec data={props.lec} />
+       </div>
+      </Tab>
+      <Tab eventKey="emprunts" title="Emprunts">
+       <h1 className="add-title title-unite-biblio ">Liste des Emprunts</h1>
+       <div className="col-md-10  offset-md-1">
+       <Borrows items={props.ept? props.ept : []}/>
        </div>
       </Tab>
       <Tab eventKey="inventaire" title="Catalague Inventaire">
@@ -103,10 +110,12 @@ const mapStateToProps = ({expunite}) => ({
   error:expunite.error,
   exps:expunite.exp,
   th:expunite.th,
-  lec:expunite.lecteurs
+  lec:expunite.lecteurs,
+  ept:expunite.emprunts
 });
 
 const mapDispatchToProps = {
+  getEptByUnit:getEptByUnit,
 getExpUnite: getEpUnit,
 getThByUnit:getThByUnit,
 getLecByUnit:getLecByUnit

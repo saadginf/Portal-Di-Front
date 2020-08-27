@@ -20,6 +20,7 @@ const Formu = (props) => {
     let refs = ""
    if(values.reference) values.reference.map(a=>{
       refs =  a.value+ ','+refs
+      return true
     })
     console.log(refs)
     formData.append("file", values.fichier[0]);

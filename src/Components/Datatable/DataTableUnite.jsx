@@ -1,13 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import BootstrapTable from 'react-bootstrap-table-next';
 import filterFactory, { textFilter,selectFilter  } from 'react-bootstrap-table2-filter';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import ToolkitProvider, { CSVExport } from 'react-bootstrap-table2-toolkit';
 import {withRouter} from 'react-router-dom'
+import AddEmprunModal from '../../containers/BiblioInsp/AddEmpruntModal'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye } from '@fortawesome/free-solid-svg-icons'
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 const DataTableUnite = (props) => {
-  
+  const [show, setShow] = useState(false)
+  const [idexemp, setIdexemp] = useState(0)
+
+  const close = () => setShow(false);
+ 
   const { ExportCSVButton } = CSVExport;
   const selectOptions = {
     1: 'Existe',
@@ -16,9 +21,16 @@ const DataTableUnite = (props) => {
   };
   const linkFormatter = (cell, row, rowIndex) => {
     return (
-      <a href={props.location.pathname+"/"+cell} >
-        <FontAwesomeIcon icon={faEye} color="green"/>
-      </a>
+        <FontAwesomeIcon  icon={faSignOutAlt} size="lg" color="green" onClick={()=>{
+          if(row.position){
+          setIdexemp(cell)
+          setShow(true)
+          }else{
+            alert("Cet exemplaire est déjá emprunté")
+          }
+        }}
+       />
+
     );
   };
   const columns = [{
@@ -77,7 +89,6 @@ const DataTableUnite = (props) => {
     title: true,
     align: 'center',
     headerAlign: 'center',
-    filter: textFilter(),
     sort: true,
    
     formatter: cell => selectOptions[cell],
@@ -88,7 +99,7 @@ const DataTableUnite = (props) => {
   )
   },
   {
-    dataField: "rayonId",
+    dataField: "id",
     text: " ",
     formatter: linkFormatter,
     align: 'center',
@@ -99,8 +110,9 @@ const DataTableUnite = (props) => {
   ;
 
   
-  return  <ToolkitProvider
-  keyField={'rayonId'} data={ props.data? props.data : [] } 
+  return  <>
+  <ToolkitProvider
+  keyField={'id'} data={ props.data? props.data : [] } 
   bootstrap4
   columns={ columns } 
   exportCSV
@@ -124,6 +136,8 @@ const DataTableUnite = (props) => {
     )
   }
 </ToolkitProvider>
+<AddEmprunModal show={show} handleClose={close} idexemp={idexemp} lecteurs={props.lecteurs}/>
+</>
 }
 
 export default withRouter(DataTableUnite);

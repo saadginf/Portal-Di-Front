@@ -1,16 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 import BootstrapTable from 'react-bootstrap-table-next';
 import filterFactory, { textFilter  } from 'react-bootstrap-table2-filter';
 import paginationFactory from 'react-bootstrap-table2-paginator';
-import ToolkitProvider, { CSVExport } from 'react-bootstrap-table2-toolkit';
+import ToolkitProvider from 'react-bootstrap-table2-toolkit';
 import {withRouter} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFileDownload } from '@fortawesome/free-solid-svg-icons'
-import Axios from "axios"
+import AddLecModal from '../../containers/BiblioInsp/AddLecModal'
 const DataTableLecteur = (props) => {
-  
-  const { ExportCSVButton } = CSVExport;
-
+  const [show, setShow] = useState(false)
+  const handleClose = () => setShow(false);
+  const handleShow = () => {
+    setShow(true);
+    console.log(show)
+  }
   const linkFormatter = (cell, row, rowIndex) => {
     return (
       <div className="result-item-eye">
@@ -62,7 +65,10 @@ const DataTableLecteur = (props) => {
   ;
 
   
-  return  <ToolkitProvider
+  return  <>
+  
+  <button className="btn btn-primary addLecteur" onClick={handleShow}>Ajouter un Lecteur</button>
+  <ToolkitProvider
   keyField={'id'} data={ props.data? props.data : [] } 
   bootstrap4
   columns={ columns } 
@@ -72,7 +78,6 @@ const DataTableLecteur = (props) => {
     props => (
       <div>
        
-        <button className="btn btn-primary addLecteur" >Ajouter un Lecteur</button>
         <BootstrapTable
           { ...props.baseProps }
           pagination={ paginationFactory() }
@@ -86,6 +91,8 @@ const DataTableLecteur = (props) => {
     )
   }
 </ToolkitProvider>
+<AddLecModal title="Ajouter Un Lecteur" show={show} handleClose={handleClose}/>
+</>
 }
 
 export default withRouter(DataTableLecteur);

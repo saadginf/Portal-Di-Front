@@ -1,15 +1,15 @@
 import React from 'react'
 import BootstrapTable from 'react-bootstrap-table-next';
-import filterFactory, { textFilter,selectFilter  } from 'react-bootstrap-table2-filter';
+import filterFactory, { textFilter  } from 'react-bootstrap-table2-filter';
 import paginationFactory from 'react-bootstrap-table2-paginator';
-import ToolkitProvider, { CSVExport } from 'react-bootstrap-table2-toolkit';
+import ToolkitProvider from 'react-bootstrap-table2-toolkit';
 import {withRouter} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye } from '@fortawesome/free-solid-svg-icons'
 import Axios from "axios"
 const DataTableArchive = (props) => {
   
-  const { ExportCSVButton } = CSVExport;
+
 
   const linkFormatter = (cell, row, rowIndex) => {
     return (

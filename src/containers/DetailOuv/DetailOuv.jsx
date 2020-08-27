@@ -47,7 +47,7 @@ const DetailOuv = (props) => {
   <tbody>
   {props.stats.length? props.stats.map((value) => (
                 <tr>
-                <th scope="row">{value.tome}</th>
+                <th scope="row">{value.tome === 'Tome0' ? '-':value.tome}</th>
                 <td>{value.uniteInsp}</td>
                 <td>{value.uniteCit}</td>
                 <td>{value.initeEct}</td>

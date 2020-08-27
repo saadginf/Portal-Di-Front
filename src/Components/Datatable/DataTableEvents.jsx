@@ -68,7 +68,7 @@ const DataTableEvents = (props) => {
     title: true,
     align: 'center',
     headerAlign: 'center',
-    filter: textFilter(),
+    
     sort: true,
    
     formatter: cell => selectOptions[cell],

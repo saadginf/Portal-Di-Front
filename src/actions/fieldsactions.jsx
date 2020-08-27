@@ -38,7 +38,7 @@ export const addType = (data)=>dispatch =>{
       .post('http://localhost:8080/api/biblio/types', data)
        .then(res => {
         dispatch({type:action.ADD_FIELD_SUCCESS})
- 
+        alert("Ajouté avec Succès")
     })
         .catch(err=> {
             console.log(err.response.data)
@@ -57,6 +57,7 @@ export const addType = (data)=>dispatch =>{
           .post('http://localhost:8080/api/biblio/editeurs', data)
            .then(res => {
             dispatch({type:action.ADD_FIELD_SUCCESS})
+            alert("Ajouté avec Succès")
      
         })
             .catch(err=> {
@@ -76,6 +77,7 @@ export const addType = (data)=>dispatch =>{
               .post('http://localhost:8080/api/biblio/classifications', data)
                .then(res => {
                 dispatch({type:action.ADD_FIELD_SUCCESS})
+                alert("Ajouté avec Succès")
          
             })
                 .catch(err=> {
@@ -95,6 +97,7 @@ export const addType = (data)=>dispatch =>{
                   .post('http://localhost:8080/api/biblio/origines', data)
                    .then(res => {
                     dispatch({type:action.ADD_FIELD_SUCCESS})
+                    alert("Ajouté avec Succès")
              
                 })
                     .catch(err=> {
@@ -114,7 +117,7 @@ export const addType = (data)=>dispatch =>{
                       .post('http://localhost:8080/api/biblio/themes', data)
                        .then(res => {
                         dispatch({type:action.ADD_FIELD_SUCCESS})
-                 
+                        alert("Ajouté avec Succès")
                     })
                         .catch(err=> {
                             console.log(err.response.data)

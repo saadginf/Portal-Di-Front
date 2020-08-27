@@ -20,3 +20,33 @@
 .addLecteur{
     margin: 20px 0;
 }
+.success-vector{
+    text-align: center;
+}
+.borrow-item{
+    border : 1px solid black;
+    padding:10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 5px #888888;
+    width: 250px;
+    position: relative;
+}
+.btn-form-borrow{
+    text-align: center;
+}
+.borrows{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.number-days{
+   
+    background-color: red;
+    padding: 20px;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: -30px;
+    color:white;
+}

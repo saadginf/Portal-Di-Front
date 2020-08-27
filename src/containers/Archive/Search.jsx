@@ -36,14 +36,14 @@ const Search = props => {
       }
     
     const [sousThemes, setSouThemes] = useState([]);
-    const { handleSubmit, register, errors,control } = useForm();
+    const { handleSubmit,control  } = useForm();
   
     return (
         <>
         <div className="search-doc">
              <h1 className="title-search">Chercher des documents</h1>
              <div className="imgsearch">
-                 <img src={searchimg}/>
+                 <img src={searchimg} alt=""/>
                  <div className="col-md-6  offset-md-3">
                     <form className="form-search" onSubmit={handleSubmit(onSubmit)}>
                     

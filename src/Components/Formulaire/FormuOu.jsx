@@ -31,7 +31,7 @@ const FormOu = (props) => {
   const autShow = () => setShowaut(true);
   useEffect(() => {
     props.getFields()
-  }, [props.getFields])  
+  }, [])  
 
   const { handleSubmit, register, errors,control } = useForm();
   const onSubmit = values =>{

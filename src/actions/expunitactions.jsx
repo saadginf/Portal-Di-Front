@@ -125,3 +125,33 @@ export const getLecByUnit = (unite)=> dispatch  =>{
         )
     
 }
+export const getEptByUnit = (unite)=> dispatch  =>{
+   
+    dispatch({
+        type: action.FETCH_EPT_START
+    })
+    Axios.get('http://localhost:8080/api/biblio/emprunt/unite/'+unite)
+    .then(res=>{
+       console.log(res.data) 
+    
+       dispatch({
+        type: action.FETCH_EPT_SUCCESS,
+        payload: res.data
+    })
+    })
+    .catch(err=>{
+        console.log(err)
+        dispatch({
+            type: action.FETCH_EPT_FAIL,
+           
+        })
+    }).finally(()=>{
+        dispatch({
+            type:action.FETCH_EPT_END,
+            
+        })
+     
+    }
+        )
+    
+}
