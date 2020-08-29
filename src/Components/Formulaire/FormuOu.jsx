@@ -29,6 +29,7 @@ const FormOu = (props) => {
   const orClose = () => setShowor(false);
   const autClose = () => setShowaut(false);
   const autShow = () => setShowaut(true);
+  
   useEffect(() => {
     props.getFields()
   }, [])  

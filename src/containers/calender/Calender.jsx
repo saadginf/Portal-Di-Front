@@ -49,7 +49,7 @@ const Calender = props =>{
     />
       
       </Tab>
-      <Tab eventKey="agenda" title="Dans 10jrs">
+      <Tab eventKey="agenda" title="Dans 5/10jrs">
       <div className="col-md-6  offset-md-3">
       <h1 className="add-title title-unite-biblio">Dans 5 Jours</h1>
           <Agenda topten={props.topfive? props.topfive : []}/>
