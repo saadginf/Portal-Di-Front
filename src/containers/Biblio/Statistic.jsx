@@ -12,7 +12,7 @@ const Statistic = (props) => {
                     <div className="icon">
                     <FontAwesomeIcon icon={faBook}/>
                     </div>
-                    <a href="/" className="card-box-footer">Accéder <FontAwesomeIcon icon={faArrowAltCircleRight}/></a>
+                   
                 </div>
             </div>
 

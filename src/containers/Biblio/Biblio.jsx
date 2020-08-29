@@ -41,7 +41,7 @@ const Biblio = (props) => {
                     <Statistics unite="Inspection" color="red" number={props.stats.uniteInsp}/>
                     <Statistics unite="CIT" color="green" number={props.stats.uniteCit}/>
                     <Statistics unite="ECT" color="orange" number={props.stats.initeEct}/>
-                    <Statistics unite="BGE" color="orange" number={props.stats.initeEct}/>
+                    <Statistics unite="BGE" color="orange" number={props.stats.uniteBge}/>
                     <Statistics unite="1°BST" color="blue" number={props.stats.uniteBst}/>
                     <Statistics unite="2° Bt" color="gray" number={props.stats.unite2Bt}/>
                     <Statistics unite="3° Bt" color="purpul" number={props.stats.unit3Bt}/>
