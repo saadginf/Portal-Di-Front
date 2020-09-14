@@ -8,8 +8,8 @@ const UpFile = (props) => {
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState('')
   const onSubmit = values =>{
+    
     let formData = new FormData();
-
     formData.append("file", values.fichier[0]);
     Axios.post('http://localhost:8080/api/biblio/ouvrages/uploadFile/'+props.ouv, formData,{
                   

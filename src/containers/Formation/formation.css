@@ -1,0 +1,18 @@
+.formation-home{
+    background-color: rgba(169, 169, 169, 0.233);
+    width: 95%;
+    margin: -15px auto 50px ;
+    padding: 20px;
+    display: flex;
+    height: 780px;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.modal-planif{
+    flex-wrap: wrap;
+
+    display: flex;
+    justify-content: space-around;
+
+}

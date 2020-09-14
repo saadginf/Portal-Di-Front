@@ -11,6 +11,7 @@ const Search = props => {
     const onSubmit = values =>{
         console.log(values);
         setLoading(true)
+       
         let formData = new FormData();  
      
         formData.append("typeDocument", values.typedocument.value);

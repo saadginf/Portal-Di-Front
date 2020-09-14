@@ -10,6 +10,7 @@ import DetailOuv from './containers/DetailOuv/DetailOuv'
 import BiblioInsp from "./containers/BiblioInsp/BiblioInsp"
 import SerachInsp from './containers/SearchInsp/SearchInsp'
 import Archive from './containers/Archive/Archive'
+import HomeFormation from './containers/Formation/HomeFormation'
 import {
   BrowserRouter as Router,
   Switch,
@@ -31,6 +32,7 @@ function App() {
       <Route path="/calendrier" exact component={Calendrier}/>
       <Route path="/search" exact component={SerachInsp}/>
       <Route path="/archive" exact component={Archive}/>
+      <Route path="/formation" exact component={HomeFormation}/>
       <Route path="/" exact component={Home}/>
           <Redirect to="/"/>
         </Switch>
