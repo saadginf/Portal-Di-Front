@@ -5,8 +5,10 @@ import imageplan from '../../assets/planif.png'
 import imagerh from '../../assets/gestionrh.png'
 import ItemRubrique from './ItemRubrique'
 import PlanifModal from './PlanifModal'
+import GesModal from './GesModal'
 const HomeFormation = () => {
     const [showplanif, setshowplanif] = useState(false)
+    const [showges, setshowges] = useState(false)
     return (
         <>
         <div className="formation-home">
@@ -20,10 +22,14 @@ const HomeFormation = () => {
          
             <ItemRubrique title="Suivie" image={imagesuivie} text="Cette rubrique concerne le suivie de la formation du personnel de l'arme"/>
          
-            <ItemRubrique title="Gestion" image={imagerh} text="Cette rubrique concerne le suivie de la formation du personnel de l'arme" />
+            <ItemRubrique 
+             onClick={()=>setshowges(true)}
+            title="Gestion" 
+            image={imagerh} 
+            text="Cette rubrique concerne le suivie de la formation du personnel de l'arme" />
          
         </div>
-
+        <GesModal show = {showges} handleClose={()=>setshowges(false)}/>
         <PlanifModal show = {showplanif} handleClose={()=>setshowplanif(false)}/>
         </>
     )

@@ -11,6 +11,7 @@ import BiblioInsp from "./containers/BiblioInsp/BiblioInsp"
 import SerachInsp from './containers/SearchInsp/SearchInsp'
 import Archive from './containers/Archive/Archive'
 import HomeFormation from './containers/Formation/HomeFormation'
+import RhPage from './containers/Formation/RhPage'
 import {
   BrowserRouter as Router,
   Switch,
@@ -34,6 +35,7 @@ function App() {
       <Route path="/archive" exact component={Archive}/>
       <Route path="/formation" exact component={HomeFormation}/>
       <Route path="/" exact component={Home}/>
+      <Route path="/rh" exact component={RhPage}/>
           <Redirect to="/"/>
         </Switch>
       </Layout>

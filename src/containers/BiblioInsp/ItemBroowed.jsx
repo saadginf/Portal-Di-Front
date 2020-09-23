@@ -2,13 +2,13 @@ import React from 'react'
 
 const ItemBroowed = (props) => {
 
-    var date2 = new Date(props.dateDebut); 
-      var present_date = new Date(); 
+    let date2 = new Date(props.dateDebut); 
+      let present_date = new Date(); 
       // To calculate the time difference of two dates 
-      var Difference_In_Time =present_date.getTime() - date2.getTime(); 
+      let Difference_In_Time =present_date.getTime() - date2.getTime(); 
       // To calculate the no. of days between two dates 
-      var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24); 
-    var final = Difference_In_Days.toFixed(0)
+      let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24); 
+    let final = Difference_In_Days.toFixed(0)
     
     return (
         <div className="borrow-item">
