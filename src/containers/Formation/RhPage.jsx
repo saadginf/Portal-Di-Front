@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
-import {Tabs,Tab} from "react-bootstrap"
 import RhSearch from './RhSearch'
-import DataTable from './DataTablePerso'
+import AddPesonNodal from './AddPersonModal'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAddressCard } from '@fortawesome/free-solid-svg-icons'
 const RhPage = () => {
-    const [key, setKey] = useState('home');
+    const [showplanif, setshowplanif] = useState(false)
     return (
         <div>
             <div className="card-title-rh">
@@ -11,20 +12,17 @@ const RhPage = () => {
                 <h4>Inspection des Transmissions</h4>
             </div>
             <div className="tabs-rh">
-            <Tabs
-            id="controlled-tab-example"
-            activeKey={key}
-            onSelect={(k) => setKey(k)}
-            >
-            <Tab eventKey="home" title="Chercher">
+                <button className="btn btn-primary btnAdd"
+                onClick={()=>setshowplanif(true)}
+                >
+                    <span className="addButton">Ajouter</span> 
+                    <FontAwesomeIcon icon={faAddressCard} color="white" />
+                </button>
                 <RhSearch/>
 
-            </Tab>
-            <Tab eventKey="profile" title="Liste">
-                <DataTable/>
-            </Tab>
-        </Tabs>
+           
             </div>
+            <AddPesonNodal show = {showplanif} handleClose={()=>setshowplanif(false)}/>
         </div>
     )
 }

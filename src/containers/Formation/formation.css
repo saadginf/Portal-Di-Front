@@ -29,6 +29,7 @@
     width: 95%;
     margin: 100px auto;
     padding: 50px;
+    position: relative;
 }
 .rh-search-request{
  
@@ -42,3 +43,100 @@
     border: 1px solid black;
     margin: 50px 0;
 }
+.addButton{
+    margin-right: 5px;
+}
+.btnAdd{
+    position: absolute;
+    left: 5px;
+    top: 0;
+}
+.form-addPerson{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+div#main-card {
+    padding: 20px;
+    max-width: 350px;
+    box-shadow: -5px 2px 18px 4px #ccc;
+    position: relative;
+    margin: 20px;
+}
+
+.ruban{
+
+    width: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: purple;
+ 
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contact{
+    text-align: right;
+}
+.card-profile{
+    background-color: rgb(115, 133, 103);
+    height: 200px;
+}
+.profile-intern{
+    width: 95%;
+    margin: -50px auto 10px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 2px 2px rgb(223, 221, 221);
+}
+.img-container{
+
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+.profile-page-userimg{
+    border-radius: 50%;
+    background-color: #888888;
+    margin-top: -40px;
+}
+.direct-info{
+    width: 400px;
+    padding: 10px;
+}
+.aptitudphy-ok{
+  width: 20px;
+  height: 20px;
+  background-color: rgb(45, 160, 45);
+  border-radius: 50%;
+}
+.aptitudphy-nok{
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  .info-profile{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+  }
+  .multi-info{
+      width: 800px;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid black;
+  }
+
+  .nav-info{
+      border: 1px solid red;
+  }
+  #left-tabs-example{
+    border: 1px solid purple;
+  }

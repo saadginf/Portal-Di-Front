@@ -12,6 +12,7 @@ import SerachInsp from './containers/SearchInsp/SearchInsp'
 import Archive from './containers/Archive/Archive'
 import HomeFormation from './containers/Formation/HomeFormation'
 import RhPage from './containers/Formation/RhPage'
+import ProfilePAge from './containers/Formation/ProfilePAge'
 import {
   BrowserRouter as Router,
   Switch,
@@ -36,6 +37,7 @@ function App() {
       <Route path="/formation" exact component={HomeFormation}/>
       <Route path="/" exact component={Home}/>
       <Route path="/rh" exact component={RhPage}/>
+      <Route path="/profile/:id" exact component={ProfilePAge}/>
           <Redirect to="/"/>
         </Switch>
       </Layout>
