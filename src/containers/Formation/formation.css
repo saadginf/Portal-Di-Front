@@ -129,14 +129,31 @@ flex-direction: column;
   }
   .multi-info{
       width: 800px;
-      padding: 10px;
+      padding: 10px 0;
       margin-bottom: 10px;
-      border: 1px solid black;
+      
+     
   }
 
   .nav-info{
-      border: 1px solid red;
+      height: 443px;
+      justify-content: space-around;
+      background-color: rgb(236, 235, 235);
+      padding: 10px;
   }
   #left-tabs-example{
     border: 1px solid purple;
+  }
+  .add-btn-item{
+    padding: 0 10px;
+      text-align: right;
+  }
+  .title-dtails{
+      text-align: center;
+  }
+  .table-details{
+padding: 0 10px;
+  }
+  .maj{
+      text-align: center;
   }

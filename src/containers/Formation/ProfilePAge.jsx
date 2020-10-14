@@ -2,7 +2,12 @@ import React, {useEffect, useState} from 'react'
 import DefaultUser from '../../assets/Default-welcomer.png'
 import {Table,Tab,Row,Col,Nav} from 'react-bootstrap';
 import Axios from 'axios'
-
+import Fonctions from './Fonctions'
+import Unites from './Unites';
+import Grade from './Grade';
+import Esolde from './Esolde';
+import Notations from './Notations';
+import Penalisations from './Penelasition';
 const ProfilePAge = (props) => {
     const [item, setItem] = useState({})
     const [loading, setLoading] = useState(true)
@@ -53,15 +58,15 @@ const ProfilePAge = (props) => {
     </tr>
     <tr>
       <td>Unité</td>
-      <td>{item.dateEntreeService}</td>
-    </tr>
-    <tr>
-      <td>Fonction</td>
       <td>{item.uniteActuelle.label}</td>
     </tr>
     <tr>
-      <td>Spécialité</td>
+      <td>Fonction</td>
       <td>{item.fonctionActuelle ? item.fonctionActuelle.label : "AD"}</td>
+    </tr>
+    <tr>
+      <td>Spécialité</td>
+      <td>{item.specialite ? item.specialite.label : "AD"}</td>
     </tr>
     <tr>
       <td>Origine</td>
@@ -106,10 +111,22 @@ const ProfilePAge = (props) => {
     <Col sm={9}>
       <Tab.Content>
         <Tab.Pane eventKey="1">
-          <h2>PAge1</h2>
+         <Fonctions id={item.id} fonctions={item.fonctionAvoirs}/>
         </Tab.Pane>
         <Tab.Pane eventKey="2">
-        <h2>PAge2</h2>
+        <Unites unites={item.uniteAffAvoirs}/>
+        </Tab.Pane>
+        <Tab.Pane eventKey="3">
+        <Grade grades={item.gradeAvoirs}/>
+        </Tab.Pane>
+        <Tab.Pane eventKey="4">
+        <Esolde esoldes={item.echelleSoldeAvoirs}/>
+        </Tab.Pane>
+        <Tab.Pane eventKey="5">
+        <Notations notations={item.notations}/>
+        </Tab.Pane>
+        <Tab.Pane eventKey="6">
+        <Penalisations penalisations={item.penalisations}/>
         </Tab.Pane>
       </Tab.Content>
     </Col>

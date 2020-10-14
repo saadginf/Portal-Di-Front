@@ -96,7 +96,7 @@ const RhSearch = () => {
 
            </div>
            <div className="search-result">
-        {results.length ? results.map(a=><PersonCard item={a}/>) :"Aucun Résultat Trouvé"}
+        {results.length ? results.map(a=><PersonCard key={a.id} item={a}/>) :"Aucun Résultat Trouvé"}
         </div>
           
         </div>
