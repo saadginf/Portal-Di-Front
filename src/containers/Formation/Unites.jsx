@@ -27,7 +27,7 @@ const Unites = ({id,unites}) => {
   </thead>
   <tbody>
     
-    {unites.length ? unites.map(a=> <tr key={a.value}>
+    {unites.length ? unites.map(a=> <tr key={a.id}>
     <td>{a.unite.label}</td>
       <td>{a.dateDebutAff}</td>
       <td>{a.dateFinAff}</td>
@@ -35,7 +35,7 @@ const Unites = ({id,unites}) => {
    
   </tbody>
 </Table>}
-<AddUniteModal show={show} handleClose={close} id={id}/>
+<AddUniteModal show={show} onHide={close} id={id}/>
 
 
             </div>

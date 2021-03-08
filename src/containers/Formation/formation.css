@@ -1,159 +1,270 @@
-.formation-home{
-    background-color: rgba(169, 169, 169, 0.233);
-    width: 95%;
-    margin: -15px auto 50px ;
-    padding: 20px;
-    display: flex;
-    height: 780px;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+.formation-home {
+  background-color: rgba(169, 169, 169, 0.233);
+  width: 95%;
+  margin: -15px auto 50px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-around;
 }
-.modal-planif{
-    flex-wrap: wrap;
+.formation-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.modal-planif {
+  flex-wrap: wrap;
 
-    display: flex;
-    justify-content: space-around;
-
+  display: flex;
+  justify-content: space-around;
 }
-.card-title-rh{
-    height: 100px;
-    background-color: rgba(73, 136, 31, 0.657);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.card-title-rh {
+  height: 100px;
+  background-color: rgba(73, 136, 31, 0.657);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.tabs-rh{
-    box-shadow: 5px 5px 5px #888888;
-    width: 95%;
-    margin: 100px auto;
-    padding: 50px;
-    position: relative;
+.tabs-rh {
+  box-shadow: 5px 5px 5px #888888;
+  width: 95%;
+  margin: 100px auto;
+  padding: 50px;
+  position: relative;
 }
-.rh-search-request{
- 
-    width: 50%;
-    margin:50px auto;
-    padding: 20px;
-    background-color:  rgba(73, 136, 31, 0.657);
-    box-shadow: 5px 5px 5px #888888
+.rh-search-request {
+  width: 50%;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgba(73, 136, 31, 0.657);
+  box-shadow: 5px 5px 5px #888888;
 }
-.addmilitaire{
-    border: 1px solid black;
-    margin: 50px 0;
+.addmilitaire {
+  border: 1px solid black;
+  margin: 50px 0;
 }
-.addButton{
-    margin-right: 5px;
+.addButton {
+  margin-right: 5px;
 }
-.btnAdd{
-    position: absolute;
-    left: 5px;
-    top: 0;
+.btnAdd {
+  position: absolute;
+  left: 5px;
+  top: 0;
 }
-.form-addPerson{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.form-addPerson {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 div#main-card {
-    padding: 20px;
-    max-width: 350px;
-    box-shadow: -5px 2px 18px 4px #ccc;
-    position: relative;
-    margin: 20px;
+  padding: 20px;
+  max-width: 350px;
+  box-shadow: -5px 2px 18px 4px #ccc;
+  position: relative;
+  margin: 20px;
 }
 
-.ruban{
-
-    width: 10px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    background-color: purple;
- 
+.ruban {
+  width: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: purple;
 }
-.content{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.contact{
-    text-align: right;
+.contact {
+  text-align: right;
 }
-.card-profile{
-    background-color: rgb(115, 133, 103);
-    height: 200px;
+.card-profile {
+  background-color: rgb(115, 133, 103);
+  height: 200px;
 }
-.profile-intern{
-    width: 95%;
-    margin: -50px auto 10px;
-    border-radius: 5px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 2px 2px 2px 2px rgb(223, 221, 221);
+.profile-intern {
+  width: 95%;
+  margin: -50px auto 10px;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 2px 2px rgb(223, 221, 221);
 }
-.img-container{
-
-display: flex;
-align-items: center;
-flex-direction: column;
+.img-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-.profile-page-userimg{
-    border-radius: 50%;
-    background-color: #888888;
-    margin-top: -40px;
+.profile-page-userimg {
+  border-radius: 50%;
+  background-color: #888888;
+  margin-top: -40px;
 }
-.direct-info{
-    width: 400px;
-    padding: 10px;
+.direct-info {
+  width: 400px;
+  padding: 10px;
 }
-.aptitudphy-ok{
+.aptitudphy-ok {
   width: 20px;
   height: 20px;
   background-color: rgb(45, 160, 45);
   border-radius: 50%;
 }
-.aptitudphy-nok{
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border-radius: 50%;
-  }
-  .info-profile{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.aptitudphy-nok {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+}
+.info-profile {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.multi-info {
+  width: 800px;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
 
-  }
-  .multi-info{
-      width: 800px;
-      padding: 10px 0;
-      margin-bottom: 10px;
-      
-     
-  }
+.nav-info {
+  height: 443px;
+  justify-content: space-around;
+  background-color: rgb(236, 235, 235);
+  padding: 10px;
+}
+#left-tabs-example {
+  border: 1px solid purple;
+}
+.add-btn-item {
+  padding: 0 10px;
+  text-align: right;
+}
+.title-dtails {
+  text-align: center;
+}
+.table-details {
+  padding: 0 10px;
+}
+.maj {
+  text-align: center;
+}
+.container-gesFormation-tabs {
+  margin: 40px;
+  box-shadow: 0 1px 1px 1px rgb(223, 221, 221);
+}
+.addButton-gesForm {
+  margin-left: 5px;
+}
+.addbuttons-gesForm {
+  margin-top: -20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btnAddGesForm {
+  margin: 10px;
+}
+.data-container-formation {
+  padding: 20px;
+  text-align: center;
+}
 
-  .nav-info{
-      height: 443px;
-      justify-content: space-around;
-      background-color: rgb(236, 235, 235);
-      padding: 10px;
-  }
-  #left-tabs-example{
-    border: 1px solid purple;
-  }
-  .add-btn-item{
-    padding: 0 10px;
-      text-align: right;
-  }
-  .title-dtails{
-      text-align: center;
-  }
-  .table-details{
-padding: 0 10px;
-  }
-  .maj{
-      text-align: center;
-  }
+.tabs-formation {
+  width: 500px;
+  margin-top: 20px;
+  box-shadow: 2px 2px 2px 2px rgb(223, 221, 221);
+}
+.ol-formation {
+  padding-top: 10px;
+}
+.info-formation-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 50px;
+}
+.formation-details {
+  padding: 5px;
+}
+.formation-details h2 {
+  text-align: center;
+  color: rgb(59, 80, 59);
+}
+.planifItem {
+  display: flex;
+  margin: 20px;
+  padding: 10px 30px 10px 30px;
+  background-color: rgba(56, 82, 56, 0.322);
+  text-decoration: none;
+  color: white;
+  border-radius: 20px;
+  justify-content: space-between;
+}
+.ribbon {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+}
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  display: block;
+  border: 5px solid #a77474;
+}
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 15px 0;
+  background-color: #6e1616;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font: 700 18px/1 "Lato", sans-serif;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  text-align: center;
+}
+.ribbon-top-right {
+  top: -10px;
+  right: -10px;
+}
+.ribbon-top-right::before,
+.ribbon-top-right::after {
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+.ribbon-top-right::before {
+  top: 0;
+  left: 0;
+}
+.ribbon-top-right::after {
+  bottom: 0;
+  right: 0;
+}
+.ribbon-top-right span {
+  left: -25px;
+  top: 30px;
+  transform: rotate(45deg);
+}
+.sessions-options {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.sessions-options div {
+  margin-bottom: 15px;
+}
+.edit-status {
+  display: flex;
+  justify-content: space-around;
+}

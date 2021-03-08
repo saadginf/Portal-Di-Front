@@ -40,7 +40,7 @@ const AddFonctionModal = (props) => {
           size="md"
           aria-labelledby="contained-modal-title-vcenter"
           centered
-          show={props.show} onHide={props.handleClose}
+          show={props.show} onHide={props.onHide}
         >
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
@@ -71,6 +71,7 @@ const AddFonctionModal = (props) => {
             name="personel"
             placeholder="Personel"
             value={props.id}
+            readOnly
             hidden
             type="text"
             ref={register({
@@ -123,7 +124,7 @@ const AddFonctionModal = (props) => {
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={()=>{
-              props.handleClose()
+              props.onHide()
               setSuccess(false)
               setError('')
             }}>Close</Button>

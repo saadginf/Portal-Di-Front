@@ -34,7 +34,7 @@ const handleShow = () => setShow(true);
    
   </tbody>
 </Table>}
-<AddFonctionModal show={show} handleClose={close} id={id}/>
+<AddFonctionModal show={show} onHide={close} id={id}/>
 
 
             </div>

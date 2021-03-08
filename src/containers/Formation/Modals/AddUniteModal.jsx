@@ -11,26 +11,26 @@ const AddUniteModal = (props) => {
   const { handleSubmit, register, errors,control } = useForm();
   const onSubmit = values =>{
 
-    let data ={
+ let data ={
         personel:{
             id:values.personel
-        },
+       },
         unite:{
             value:values.unite.value
-        },
-        dateDebutAff:values.dateDebutAff,
-        dateFinAff:values.dateFinAff
-        }
+       },
+       dateDebutAff:values.dateDebutAff,
+       dateFinAff:values.dateFinAff
+       }
 
-    console.log(data)
+    console.log(values)
    Axios.post('http://localhost:8080/api/rh/perso/addUnite', data)
     .then(res=>{
-       console.log(res.data) 
-      setSuccess(true)
-   })
+      console.log(res.data) 
+     setSuccess(true)
+    })
  .catch(err=>{
-       console.log(err)
-       setError('Lecteur déjà existant')
+      console.log(err)
+      setError('Lecteur déjà existant')
     })
 
   }
@@ -40,25 +40,25 @@ const AddUniteModal = (props) => {
           size="md"
           aria-labelledby="contained-modal-title-vcenter"
           centered
-          show={props.show} onHide={props.handleClose}
+          show={props.show} onHide={props.onHide}
         >
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
-             {success? <h2>Ajouté avec succés</h2>:<h2>Ajouter une fonction</h2>}
+             {success? <h2>Ajouté avec succés</h2>:<h2>Ajouter une unité</h2>}
             </Modal.Title>
           </Modal.Header>
          
           <Modal.Body>
         { !success && <form onSubmit={handleSubmit(onSubmit)}>
         <div className="forme-group form-fields">
-              <label htmlFor="unite">Unite</label>
+              <label htmlFor="unite">Fonction</label>
               <Controller
-              placeholder="Unite"
+              placeholder="Unité"
               as={ReactSelect}
               options={[
                   {
                       value:2,
-                      label:"7bt"
+                      label:"insp"
                   },
               ]}
               name="unite"
@@ -71,6 +71,7 @@ const AddUniteModal = (props) => {
             name="personel"
             placeholder="Personel"
             value={props.id}
+            readOnly
             hidden
             type="text"
             ref={register({
@@ -99,7 +100,9 @@ const AddUniteModal = (props) => {
             name="dateFinAff"
             placeholder="Date Fin"
             type="date"
-            
+            ref={register({
+              required: "Champ Obligatoire",
+            })}
           />
                <div className="text-danger ">
             {errors.dateFinAff && errors.dateFinAff.message}
@@ -121,7 +124,7 @@ const AddUniteModal = (props) => {
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={()=>{
-              props.handleClose()
+              props.onHide()
               setSuccess(false)
               setError('')
             }}>Close</Button>

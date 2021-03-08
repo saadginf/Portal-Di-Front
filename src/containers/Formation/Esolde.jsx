@@ -1,11 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Table} from 'react-bootstrap';
+import AddEsModal from './Modals/AddEsModal';
+
 const Esolde = ({id,esoldes}) => {
+  const [show, setShow] = useState(false);
+  const close = () => setShow(false);
+  const handleShow = () => setShow(true);
     return (
         <div className='info-item'>
             <div className="add-btn-item">
-            <button className='btn btn-success'>Ajouter</button>
-            </div>
+            <button className='btn btn-success'
+            onClick={handleShow}
+            >Ajouter</button>            </div>
             <div className="title-dtails">
                 <h3>Historique des E.Soldes</h3>
             </div>
@@ -27,6 +33,7 @@ const Esolde = ({id,esoldes}) => {
   </tbody>
 </Table>}
 
+<AddEsModal show={show} onHide={close} id={id}/>
 
 
             </div>
